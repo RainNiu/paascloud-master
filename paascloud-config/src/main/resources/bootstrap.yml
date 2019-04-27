@@ -3,12 +3,13 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/paascloud/paascloud-config-repo.git
+          uri: https://github.com/RainNiu/paascloud-config-repo.git
           search-paths: /*
           default-label: ${spring.profiles.active}
-          basedir: /data/config/paascloud-config-repo
-          username:
-          password:
+          basedir: ./paascloud-config/src/main/resources/paascloud-config-repo
+          username: niuyu107@163.com
+          password: yu107516*
+          force-pull: false
     inetutils:
       ignoredInterfaces:
         - docker0

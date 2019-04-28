@@ -7,11 +7,12 @@
         <artifactId>paascloud-master</artifactId>
         <version>1.0</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.liuzm.paascloud.common</groupId>
     <artifactId>paascloud-common</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>paascloud-common-base</module>
         <module>paascloud-common-util</module>
@@ -22,10 +23,6 @@
         <module>paascloud-security-feign</module>
         <module>paascloud-common-zk</module>
     </modules>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>

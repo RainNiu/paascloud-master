@@ -34,3 +34,7 @@ hs_err_pid*
 target/
 
 LOG_PATH_IS_UNDEFINEDLOG_FILE_IS_UNDEFINED
+
+paascloud-discovery/src/main/resources/paascloud-config-repo/
+
+LOG_PATH_IS_UNDEFINEDdaily/

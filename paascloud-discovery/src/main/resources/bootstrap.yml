@@ -6,7 +6,7 @@ spring:
           uri: https://github.com/RainNiu/paascloud-config-repo.git
           search-paths: /*
           default-label: ${spring.profiles.active}
-          basedir: ./paascloud-config/src/main/resources/paascloud-config-repo
+          basedir: ./paascloud-discovery/src/main/resources/paascloud-config-repo
           username: niuyu107@163.com
           password: yu107516*
           force-pull: false

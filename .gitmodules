@@ -1,0 +1,3 @@
+[submodule "paascloud-discovery/src/main/resources/paascloud-config-repo"]
+	path = paascloud-discovery/src/main/resources/paascloud-config-repo
+	url = https://github.com/RainNiu/paascloud-config-repo.git

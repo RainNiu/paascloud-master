@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.liuzm.paascloud</groupId>
@@ -14,9 +14,6 @@
     <artifactId>paascloud-provider</artifactId>
     <name>paascloud-provider</name>
     <description>User authentication center</description>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <modules>
         <module>paascloud-provider-uac</module>
@@ -88,7 +85,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -127,7 +123,7 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>3.5.3</version>
+            <!--<version>3.5.3</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -138,23 +134,7 @@
             <artifactId>spring-rabbit</artifactId>
         </dependency>
     </dependencies>
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <profileActive>dev</profileActive>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>pro</id>
-            <properties>
-                <profileActive>pro</profileActive>
-            </properties>
-        </profile>
-    </profiles>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -162,7 +142,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                  <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
                 </configuration>
                 <executions>
                     <execution>
@@ -175,7 +155,7 @@
                     <dependency>
                         <groupId>org.springframework</groupId>
                         <artifactId>springloaded</artifactId>
-                        <version>1.2.5.RELEASE</version>
+                        <version>${springloaded.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -183,7 +163,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.13</version>
+                <version>${docker-maven-plugin.version}</version>
                 <configuration>
                     <imageName>${project.artifactId}:${project.version}</imageName>
                     <baseImage>java</baseImage>

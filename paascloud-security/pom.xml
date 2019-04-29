@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.liuzm.paascloud</groupId>
+        <artifactId>paascloud-master</artifactId>
+        <version>1.1</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.liuzm.paascloud.security</groupId>
+    <artifactId>paascloud-security</artifactId>
+    <name>paascloud-security</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>paascloud-security-app</module>
+        <module>paascloud-security-core</module>
+        <module>paascloud-security-feign</module>
+    </modules>
+
+    <dependencies>
+    </dependencies>
+
+</project>

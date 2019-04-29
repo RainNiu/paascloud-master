@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.liuzm.paascloud.provider</groupId>
         <artifactId>paascloud-provider</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -113,7 +113,7 @@
             <artifactId>paascloud-common-base</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
+            <groupId>com.liuzm.paascloud.security</groupId>
             <artifactId>paascloud-security-app</artifactId>
         </dependency>
     </dependencies>

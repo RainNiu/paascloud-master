@@ -9,17 +9,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.liuzm.paascloud</groupId>
     <artifactId>paascloud-master</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>pom</packaging>
 
     <modules>
+        <module>paascloud-common</module>
+        <module>paascloud-security</module>
         <module>paascloud-eureka</module>
         <module>paascloud-discovery</module>
+        <module>paascloud-gateway</module>
         <module>paascloud-monitor</module>
         <module>paascloud-zipkin</module>
-        <module>paascloud-gateway</module>
         <module>paascloud-provider-api</module>
-        <module>paascloud-common</module>
         <module>paascloud-provider</module>
         <module>paascloud-generator</module>
     </modules>
@@ -35,7 +36,9 @@
         <spring-cloud.version>Edgware.SR3</spring-cloud.version>
         <spring.version>4.3.11.RELEASE</spring.version>
         <springloaded.version>1.2.5.RELEASE</springloaded.version>
-        <paascloud.version>1.0</paascloud.version>
+        <paascloud.version>1.1</paascloud.version>
+        <paascloud.elastic.version>1.0</paascloud.elastic.version>
+        <paascloud.mybatis-generator.version>1.0</paascloud.mybatis-generator.version>
         <springfox.version>2.6.1</springfox.version>
         <swagger-butler-core.version>1.1.0</swagger-butler-core.version>
         <mysql.version>5.1.39</mysql.version>
@@ -162,17 +165,17 @@
                 <version>${paascloud.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.liuzm.paascloud.common</groupId>
+                <groupId>com.liuzm.paascloud.security</groupId>
                 <artifactId>paascloud-security-app</artifactId>
                 <version>${paascloud.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.liuzm.paascloud.common</groupId>
+                <groupId>com.liuzm.paascloud.security</groupId>
                 <artifactId>paascloud-security-core</artifactId>
                 <version>${paascloud.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.liuzm.paascloud.common</groupId>
+                <groupId>com.liuzm.paascloud.security</groupId>
                 <artifactId>paascloud-security-feign</artifactId>
                 <version>${paascloud.version}</version>
             </dependency>
@@ -209,12 +212,12 @@
             <dependency>
                 <groupId>com.liuzm.paascloud</groupId>
                 <artifactId>elastic-job-lite-starter</artifactId>
-                <version>${paascloud.version}</version>
+                <version>${paascloud.elastic.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.liuzm.mybatis</groupId>
                 <artifactId>mybatis-generator</artifactId>
-                <version>${paascloud.version}</version>
+                <version>${paascloud.mybatis-generator.version}</version>
             </dependency>
             <!-- paas cloud end -->
 

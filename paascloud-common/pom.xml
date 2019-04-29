@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.liuzm.paascloud</groupId>
         <artifactId>paascloud-master</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -18,9 +18,6 @@
         <module>paascloud-common-util</module>
         <module>paascloud-common-config</module>
         <module>paascloud-common-core</module>
-        <module>paascloud-security-app</module>
-        <module>paascloud-security-core</module>
-        <module>paascloud-security-feign</module>
         <module>paascloud-common-zk</module>
     </modules>
 

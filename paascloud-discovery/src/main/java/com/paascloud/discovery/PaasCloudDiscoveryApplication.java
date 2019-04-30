@@ -34,4 +34,5 @@ public class PaasCloudDiscoveryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PaasCloudDiscoveryApplication.class, args);
 	}
+
 }

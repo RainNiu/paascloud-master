@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2018. paascloud.net All Rights Reserved.
  * 项目名称：paascloud快速搭建企业级分布式微服务平台
- * 类名称：SecurityConfig.java
+ * 类名称：PaginationPlugin.java
  * 创建人：刘兆明
  * 联系方式：paascloud.net@gmail.com
  * 开源地址: https://github.com/paascloud
@@ -9,9 +9,8 @@
  * 项目官网: http://paascloud.net
  */
 
-package com.paascloud.gateway.config;
+package com.paascloud.discovery.config;
 
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -22,10 +21,21 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author paascloud.net @gmail.com
  */
 @Configuration
-@EnableOAuth2Sso
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
+		http.headers().frameOptions().disable()
+				.and()
+				.formLogin()
+				.loginPage("/login.html")
+				.loginProcessingUrl("/login")
+				.and()
+				.logout().logoutUrl("/logout")
+				.and()
+				.csrf().disable()
+				.authorizeRequests()
+				.antMatchers("/api/**", "/applications/**", "/api/applications/**", "/login.html", "/**/*.css", "/img/**", "/third-party/**")
+				.permitAll()
+				.anyRequest().authenticated();
 	}
 }

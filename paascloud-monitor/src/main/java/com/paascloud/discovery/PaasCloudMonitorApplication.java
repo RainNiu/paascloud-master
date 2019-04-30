@@ -15,7 +15,7 @@ import com.hazelcast.config.Config;
 import com.hazelcast.config.EvictionPolicy;
 import com.hazelcast.config.ListConfig;
 import com.hazelcast.config.MapConfig;
-import de.codecentric.boot.admin.config.EnableAdminServer;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;

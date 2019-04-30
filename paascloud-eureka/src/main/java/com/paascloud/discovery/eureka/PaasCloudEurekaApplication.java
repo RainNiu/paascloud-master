@@ -32,4 +32,5 @@ public class PaasCloudEurekaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PaasCloudEurekaApplication.class, args);
 	}
+
 }

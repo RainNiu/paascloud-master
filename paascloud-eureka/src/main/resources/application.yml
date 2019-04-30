@@ -6,10 +6,9 @@ spring:
     active: dev
   application:
     name: @pom.artifactId@
-
-security:
-  basic:
-    enabled: true
-  user:
-    name: root
-    password: root
+  security:
+    basic:
+      enabled: true
+    user:
+      name: root
+      password: root

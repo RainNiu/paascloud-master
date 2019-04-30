@@ -3,13 +3,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.13.RELEASE</version>
+        <version>2.0.6.RELEASE</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.liuzm.paascloud</groupId>
     <artifactId>paascloud-master</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -34,9 +34,9 @@
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
-        <spring.platform-bom.version>Brussels-SR10</spring.platform-bom.version>
-        <spring-cloud.version>Edgware.SR3</spring-cloud.version>
-        <spring.version>4.3.11.RELEASE</spring.version>
+        <spring.platform-bom.version>Cairo-RELEASE</spring.platform-bom.version>
+        <spring-cloud.version>Finchley.SR3</spring-cloud.version>
+        <spring.version>5.0.10.RELEASE</spring.version>
         <springloaded.version>1.2.5.RELEASE</springloaded.version>
         <paascloud.version>1.1</paascloud.version>
         <paascloud.elastic.version>1.0</paascloud.elastic.version>
@@ -79,7 +79,7 @@
         <alipay-trade-sdk.version>20161215</alipay-trade-sdk.version>
         <rocketmq.version>4.1.0-incubating</rocketmq.version>
         <qiniu-java-sdk.version>[7.0.0, 7.2.99]</qiniu-java-sdk.version>
-        <boot.admin.version>1.5.7</boot.admin.version>
+        <boot.admin.version>2.0.4</boot.admin.version>
         <zipkin.version>2.3.1</zipkin.version>
         <logstash-logback-encoder.version>4.6</logstash-logback-encoder.version>
         <httpclientutil.version>1.0</httpclientutil.version>
@@ -100,6 +100,14 @@
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-properties-migrator</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -435,37 +443,12 @@
             </dependency>
             <dependency>
                 <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-login</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui</artifactId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
                 <version>${boot.admin.version}</version>
             </dependency>
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-activiti</artifactId>
-                <version>${boot.admin.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-server-ui-turbine</artifactId>
                 <version>${boot.admin.version}</version>
             </dependency>
             <dependency>

@@ -1,7 +1,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.liuzm.paascloud</groupId>
+        <groupId>com.liuzm.paascloud.generator</groupId>
         <artifactId>paascloud-generator</artifactId>
         <version>1.1</version>
     </parent>
@@ -10,7 +10,6 @@
     <artifactId>paascloud-generator-mdc</artifactId>
     <packaging>jar</packaging>
     <name>paascloud-generator-mdc</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <!-- MyBatis Generator -->

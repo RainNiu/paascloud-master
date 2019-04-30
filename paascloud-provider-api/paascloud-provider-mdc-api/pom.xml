@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-    <groupId>com.liuzm.paascloud.provider.api</groupId>
+        <groupId>com.liuzm.paascloud.provider.api</groupId>
         <artifactId>paascloud-provider-api</artifactId>
         <version>1.1</version>
     </parent>
@@ -11,17 +11,9 @@
     <artifactId>paascloud-provider-mdc-api</artifactId>
     <packaging>jar</packaging>
     <name>paascloud-provider-mdc-api</name>
-    <description>Demo project for Spring Boot</description>
+    <description>数据中心 - Master data center</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.liuzm.paascloud.common</groupId>
             <artifactId>paascloud-common-util</artifactId>

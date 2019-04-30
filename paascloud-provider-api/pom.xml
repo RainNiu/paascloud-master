@@ -24,12 +24,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
-            <artifactId>paascloud-common-base</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.liuzm.paascloud.security</groupId>
             <artifactId>paascloud-security-feign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

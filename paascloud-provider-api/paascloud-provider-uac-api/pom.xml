@@ -11,7 +11,7 @@
     <artifactId>paascloud-provider-uac-api</artifactId>
     <packaging>jar</packaging>
     <name>paascloud-provider-uac-api</name>
-    <description>Demo project for Spring Boot</description>
+    <description>用户认证中心 - User authentication center</description>
 
     <dependencies>
         <dependency>

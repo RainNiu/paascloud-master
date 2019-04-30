@@ -20,7 +20,4 @@
         <module>paascloud-security-feign</module>
     </modules>
 
-    <dependencies>
-    </dependencies>
-
 </project>

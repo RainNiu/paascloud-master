@@ -52,9 +52,10 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
 	 * @throws Exception the exception
 	 */
 	@Override
-	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		security.tokenKeyAccess("permitAll()");
-		security.allowFormAuthenticationForClients();
+	public void configure(AuthorizationServerSecurityConfigurer security) {
+		security.tokenKeyAccess("permitAll()")
+				.checkTokenAccess("isAuthenticated()")
+				.allowFormAuthenticationForClients();
 	}
 
 	/**
@@ -77,7 +78,7 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
 	 * @throws Exception the exception
 	 */
 	@Override
-	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+	public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
 		endpoints.tokenStore(tokenStore)
 				.authenticationManager(authenticationManager)
 				.userDetailsService(userDetailsService);

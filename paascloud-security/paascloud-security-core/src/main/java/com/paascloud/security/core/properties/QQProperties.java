@@ -1,8 +1,8 @@
 package com.paascloud.security.core.properties;
 
+import com.paascloud.security.core.bootsocial.SocialProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.boot.autoconfigure.social.SocialProperties;
 
 /**
  * QQ登录配置项

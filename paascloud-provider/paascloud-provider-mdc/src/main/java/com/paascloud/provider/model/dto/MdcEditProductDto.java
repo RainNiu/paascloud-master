@@ -13,7 +13,7 @@ package com.paascloud.provider.model.dto;
 
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

@@ -97,15 +97,6 @@ public class OAuth2FeignAutoConfiguration {
 		return Logger.Level.FULL;
 	}
 
-	/*
-	 * To disable Hystrix support on a per-client basis create a vanilla Feign.Builder with the "prototype" scope, e.g.:
-	 */
-//	@Bean
-//	@Scope("prototype")
-//	public Feign.Builder feignBuilder() {
-//		return Feign.builder();
-//	}
-
 	@Bean
 	public ErrorDecoder errorDecoder() {
 		return new Oauth2FeignErrorInterceptor();

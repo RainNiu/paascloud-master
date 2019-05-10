@@ -17,4 +17,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 #management:
-#  context-path: /
+#  server:
+#    servlet:
+#      context-path: /

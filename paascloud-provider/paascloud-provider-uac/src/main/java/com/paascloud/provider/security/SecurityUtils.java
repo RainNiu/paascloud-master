@@ -13,7 +13,6 @@ import java.security.Principal;
 import java.util.Collection;
 import java.util.Set;
 
-
 /**
  * The class Security utils.
  *
@@ -31,23 +30,16 @@ public final class SecurityUtils {
 	 * @return the current login name
 	 */
 	public static String getCurrentLoginName() {
-
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
 		if (principal instanceof UserDetails) {
-
 			return ((UserDetails) principal).getUsername();
-
 		}
 
 		if (principal instanceof Principal) {
-
 			return ((Principal) principal).getName();
-
 		}
 
 		return String.valueOf(principal);
-
 	}
 
 	public static Set<String> getCurrentAuthorityUrl() {

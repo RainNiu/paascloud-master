@@ -36,9 +36,10 @@
         <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
         <spring.platform-bom.version>Cairo-RELEASE</spring.platform-bom.version>
         <spring-cloud.version>Finchley.SR3</spring-cloud.version>
+        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
         <spring.version>5.0.10.RELEASE</spring.version>
         <springloaded.version>1.2.5.RELEASE</springloaded.version>
-        <paascloud.version>1.1</paascloud.version>
+        <paascloud.version>1.2</paascloud.version>
         <paascloud.elastic.version>1.0</paascloud.elastic.version>
         <paascloud.mybatis-generator.version>1.0</paascloud.mybatis-generator.version>
         <springfox.version>2.6.1</springfox.version>
@@ -47,19 +48,19 @@
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <mybatis-generator-core.version>1.3.5</mybatis-generator-core.version>
         <mybatis.version>3.4.2</mybatis.version>
-        <mapper-spring-boot-starter.version>1.1.1</mapper-spring-boot-starter.version>
+        <mapper-spring-boot-starter.version>1.1.2</mapper-spring-boot-starter.version>
         <mybatis-generator-maven-plugin.version>1.3.2</mybatis-generator-maven-plugin.version>
-        <modelmapper.version>1.1.2</modelmapper.version>
-        <pagehelper-spring-boot-starter.version>1.1.2</pagehelper-spring-boot-starter.version>
-        <pagehelper.version>5.0.3</pagehelper.version>
-        <tk.mybatis.mapper.version>3.4.0</tk.mybatis.mapper.version>
-        <druid-spring-boot-starter.version>1.1.0</druid-spring-boot-starter.version>
-        <druid.version>1.0.29</druid.version>
+        <modelmapper.version>2.3.3</modelmapper.version>
+        <pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
+        <pagehelper.version>5.1.2</pagehelper.version>
+        <tk.mybatis.mapper.version>3.4.1</tk.mybatis.mapper.version>
+        <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
+        <druid.version>1.1.10</druid.version>
         <guava.version>17.0</guava.version>
         <google.zxing.core.version>2.1</google.zxing.core.version>
         <lombok.version>1.16.14</lombok.version>
         <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
-        <jackson-databind.version>2.8.4</jackson-databind.version>
+        <jackson-databind.version>2.8.9</jackson-databind.version>
         <fastjson.version>1.2.29</fastjson.version>
         <commons-codec.version>1.10</commons-codec.version>
         <commons-lang3.version>3.5</commons-lang3.version>
@@ -81,7 +82,7 @@
         <qiniu-java-sdk.version>[7.0.0, 7.2.99]</qiniu-java-sdk.version>
         <boot.admin.version>2.0.4</boot.admin.version>
         <zipkin.version>2.3.1</zipkin.version>
-        <logstash-logback-encoder.version>4.6</logstash-logback-encoder.version>
+        <logstash-logback-encoder.version>4.11</logstash-logback-encoder.version>
         <httpclientutil.version>1.0</httpclientutil.version>
         <curator.version>2.10.0</curator.version>
         <kaptcha.version>2.3.2</kaptcha.version>
@@ -240,7 +241,6 @@
                 <version>${swagger-butler-core.version}</version>
             </dependency>
             <!-- swagger cloud end -->
-
             <!--mybatis-->
             <dependency>
                 <groupId>mysql</groupId>

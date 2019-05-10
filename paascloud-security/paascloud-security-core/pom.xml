@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.liuzm.paascloud.security</groupId>
         <artifactId>paascloud-security</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>

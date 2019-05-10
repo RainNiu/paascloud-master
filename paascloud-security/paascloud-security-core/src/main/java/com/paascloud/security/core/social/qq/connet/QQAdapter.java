@@ -33,6 +33,7 @@ public class QQAdapter implements ApiAdapter<QQ> {
 	 */
 	@Override
 	public boolean test(QQ api) {
+		// 测试服务是否可用
 		return true;
 	}
 
@@ -48,7 +49,10 @@ public class QQAdapter implements ApiAdapter<QQ> {
 
 		values.setDisplayName(userInfo.getNickname());
 		values.setImageUrl(userInfo.getFigureUrlQq1());
+		// 主页地址，像微博一般有主页地址
 		values.setProfileUrl(null);
+		// 服务提供商返回的该user的openid
+		// 一般来说这个openid是和你的开发账户也就是appid绑定的
 		values.setProviderUserId(userInfo.getOpenId());
 	}
 
@@ -72,7 +76,7 @@ public class QQAdapter implements ApiAdapter<QQ> {
 	 */
 	@Override
 	public void updateStatus(QQ api, String message) {
-		//do noting
+		// 应该是退出的状态操作。
 	}
 
 }

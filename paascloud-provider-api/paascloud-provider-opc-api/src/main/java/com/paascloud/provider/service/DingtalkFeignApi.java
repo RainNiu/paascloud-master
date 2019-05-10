@@ -17,7 +17,7 @@ import com.paascloud.provider.model.dto.robot.ChatRobotMsgDto;
 import com.paascloud.provider.service.hystrix.DingtalkFeignApiHystrix;
 import com.paascloud.security.feign.OAuth2FeignAutoConfiguration;
 import com.paascloud.wrapper.Wrapper;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 

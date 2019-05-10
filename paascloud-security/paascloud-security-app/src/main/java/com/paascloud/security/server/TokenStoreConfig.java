@@ -100,8 +100,6 @@ public class TokenStoreConfig {
 		public TokenEnhancer jwtTokenEnhancer() {
 			return new TokenJwtEnhancer();
 		}
-
 	}
-
 
 }

@@ -13,7 +13,7 @@ package com.paascloud.provider.service;
 
 import com.paascloud.provider.service.hystrix.MdcProductCategoryFeignHystrix;
 import com.paascloud.security.feign.OAuth2FeignAutoConfiguration;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 
 /**
  * The interface Mdc product category feign api.

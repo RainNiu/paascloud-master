@@ -16,7 +16,6 @@
 
     <modules>
         <module>paascloud-security-app</module>
-        <module>paascloud-security-core</module>
         <module>paascloud-security-feign</module>
     </modules>
 

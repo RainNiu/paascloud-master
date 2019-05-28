@@ -43,38 +43,28 @@ import javax.sql.DataSource;
 @EnableResourceServer
 public class PcResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-	@Autowired
-	private OAuth2WebSecurityExpressionHandler pcSecurityExpressionHandler;
-
-	@Autowired
-	private AccessDeniedHandler pcAccessDeniedHandler;
-
-	@Autowired
-	protected AuthenticationSuccessHandler pcAuthenticationSuccessHandler;
-
-	@Autowired
-	protected AuthenticationFailureHandler pcAuthenticationFailureHandler;
-
-	@Autowired
-	private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
-
-	@Autowired
-	private ValidateCodeSecurityConfig validateCodeSecurityConfig;
-
-	@Autowired
-	private SpringSocialConfigurer pcSocialSecurityConfig;
-
-	@Autowired
-	private AuthorizeConfigManager authorizeConfigManager;
-
-	@Autowired
-	private FormAuthenticationConfig formAuthenticationConfig;
-
-	@Autowired
-	private OpenIdAuthenticationSecurityConfig openIdAuthenticationSecurityConfig;
-
 	@Resource
 	private DataSource dataSource;
+	@Autowired
+	private AuthorizeConfigManager authorizeConfigManager;
+	@Autowired
+	private SpringSocialConfigurer pcSocialSecurityConfig;
+	@Autowired
+	private AccessDeniedHandler pcAccessDeniedHandler;
+	@Autowired
+	private FormAuthenticationConfig formAuthenticationConfig;
+	@Autowired
+	private ValidateCodeSecurityConfig validateCodeSecurityConfig;
+	@Autowired
+	protected AuthenticationSuccessHandler pcAuthenticationSuccessHandler;
+	@Autowired
+	protected AuthenticationFailureHandler pcAuthenticationFailureHandler;
+	@Autowired
+	private OAuth2WebSecurityExpressionHandler pcSecurityExpressionHandler;
+	@Autowired
+	private OpenIdAuthenticationSecurityConfig openIdAuthenticationSecurityConfig;
+	@Autowired
+	private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
 
 	/**
 	 * 记住我功能的token存取器配置
@@ -121,4 +111,5 @@ public class PcResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public void configure(ResourceServerSecurityConfigurer resources) {
 		resources.expressionHandler(pcSecurityExpressionHandler);
 	}
+
 }

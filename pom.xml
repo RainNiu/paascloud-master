@@ -174,11 +174,6 @@
             </dependency>
             <dependency>
                 <groupId>com.liuzm.paascloud.security</groupId>
-                <artifactId>paascloud-security-core</artifactId>
-                <version>${paascloud.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.liuzm.paascloud.security</groupId>
                 <artifactId>paascloud-security-feign</artifactId>
                 <version>${paascloud.version}</version>
             </dependency>

@@ -19,7 +19,6 @@
         <module>paascloud-discovery</module>
         <module>paascloud-gateway</module>
         <module>paascloud-monitor</module>
-        <module>paascloud-zipkin</module>
         <module>paascloud-provider-api</module>
         <module>paascloud-provider</module>
         <module>paascloud-generator</module>

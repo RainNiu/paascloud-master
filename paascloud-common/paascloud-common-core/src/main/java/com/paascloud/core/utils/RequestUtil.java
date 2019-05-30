@@ -20,7 +20,7 @@ import com.paascloud.base.exception.BusinessException;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.codec.Base64;
@@ -125,7 +125,7 @@ public class RequestUtil {
 	public static String getAuthHeader(HttpServletRequest request) {
 
 		String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
-		if (org.apache.commons.lang.StringUtils.isEmpty(authHeader)) {
+		if (StringUtils.isEmpty(authHeader)) {
 			throw new BusinessException(ErrorCodeEnum.UAC10011040);
 		}
 		return authHeader;

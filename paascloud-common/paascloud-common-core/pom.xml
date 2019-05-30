@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <groupId>com.liuzm.paascloud.common</groupId>
         <artifactId>paascloud-common</artifactId>
-        <version>1.0</version>
+        <version>1.2</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <artifactId>paascloud-common-core</artifactId>
-    <version>1.0</version>
+    <packaging>jar</packaging>
+
     <dependencies>
+        <dependency>
+            <groupId>com.liuzm.paascloud.common</groupId>
+            <artifactId>paascloud-common-zk</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
-            <artifactId>paascloud-common-base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
-            <artifactId>paascloud-common-util</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -39,12 +33,6 @@
         <dependency>
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
-            <version>1.20</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
@@ -53,6 +41,26 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+            <!-- 1.5的版本默认采用的连接池技术是jedis  2.0以上版本默认连接池是lettuce, 在这里采用jedis，所以需要排除lettuce的jar -->
+            <exclusions>
+                <exclusion>
+                    <groupId>io.lettuce</groupId>
+                    <artifactId>lettuce-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>redis.clients</groupId>
+                    <artifactId>jedis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <!-- spring2.X集成redis所需common-pool2，使用jedis必须依赖它-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -73,28 +81,18 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
-            <artifactId>paascloud-common-config</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
         </dependency>
-      <dependency>
-        <groupId>com.arronlong.httpclientutil</groupId>
-        <artifactId>httpclientutil</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.common</groupId>
-        <artifactId>paascloud-common-zk</artifactId>
-      </dependency>
-
-      <dependency>
-        <groupId>com.netflix.hystrix</groupId>
-        <artifactId>hystrix-core</artifactId>
-        <version>1.5.10</version>
-      </dependency>
+        <dependency>
+            <groupId>com.arronlong.httpclientutil</groupId>
+            <artifactId>httpclientutil</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <!--<version>1.5.10</version>-->
+        </dependency>
     </dependencies>
 
 </project>

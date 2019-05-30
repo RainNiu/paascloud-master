@@ -17,10 +17,7 @@ import com.paascloud.core.interceptor.TokenInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -34,7 +31,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @Import(SwaggerConfiguration.class)
-public class MdcWebMvcConfig extends WebMvcConfigurerAdapter {
+public class MdcWebMvcConfig implements WebMvcConfigurer {
 
 	@Resource
 	private TokenInterceptor vueViewInterceptor;
@@ -52,7 +49,6 @@ public class MdcWebMvcConfig extends WebMvcConfigurerAdapter {
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		super.addInterceptors(registry);
 		registry.addInterceptor(vueViewInterceptor)
 				.addPathPatterns("/**")
 				.excludePathPatterns("/swagger-resources/**", "*.js", "/**/*.js", "*.css", "/**/*.css", "*.html", "/**/*.html");

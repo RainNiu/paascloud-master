@@ -13,7 +13,7 @@ package com.paascloud.provider.model.dto.token;
 
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 /**
  * The class Refresh token dto.

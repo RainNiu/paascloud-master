@@ -14,15 +14,18 @@ package com.paascloud.provider.config;
 import com.paascloud.core.config.PcObjectMapper;
 import com.paascloud.core.config.SwaggerConfiguration;
 import com.paascloud.core.interceptor.TokenInterceptor;
+import feign.RequestInterceptor;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
+import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordResourceDetails;
+import org.springframework.web.servlet.config.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -33,8 +36,9 @@ import java.util.List;
  */
 @Configuration
 @EnableWebMvc
+@EnableOAuth2Sso
 @Import(SwaggerConfiguration.class)
-public class TpcWebMvcConfig extends WebMvcConfigurerAdapter {
+public class TpcWebMvcConfig implements WebMvcConfigurer {
 
 	@Resource
 	private TokenInterceptor vueViewInterceptor;
@@ -52,7 +56,6 @@ public class TpcWebMvcConfig extends WebMvcConfigurerAdapter {
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		super.addInterceptors(registry);
 		registry.addInterceptor(vueViewInterceptor)
 				.addPathPatterns("/**")
 				.excludePathPatterns("/swagger-resources/**", "*.js", "/**/*.js", "*.css", "/**/*.css", "*.html", "/**/*.html");

@@ -15,7 +15,7 @@ package com.paascloud.provider.model.service;
 import com.paascloud.provider.model.service.hystrix.UacUserTokenFeignApiHystrix;
 import com.paascloud.security.feign.OAuth2FeignAutoConfiguration;
 import com.paascloud.wrapper.Wrapper;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**

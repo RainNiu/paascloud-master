@@ -18,7 +18,6 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -40,18 +39,15 @@ public class PcAuthenticationSuccessHandler extends SavedRequestAwareAuthenticat
 	@Resource
 	private UacUserService uacUserService;
 	@Resource
-	private AuthorizationServerTokenServices authorizationServerTokenServices;
+	private AuthorizationServerTokenServices tokenServices;
 
 	private static final String BEARER_TOKEN_TYPE = "Basic ";
 
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-	                                    Authentication authentication) throws IOException, ServletException {
-
+	                                    Authentication authentication) throws IOException {
 		logger.info("登录成功");
-
 		String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-
 		if (header == null || !header.startsWith(BEARER_TOKEN_TYPE)) {
 			throw new UnapprovedClientAuthenticationException("请求头中无client信息");
 		}
@@ -76,7 +72,7 @@ public class PcAuthenticationSuccessHandler extends SavedRequestAwareAuthenticat
 
 		OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
 
-		OAuth2AccessToken token = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
+		OAuth2AccessToken token = tokenServices.createAccessToken(oAuth2Authentication);
 		SecurityUser principal = (SecurityUser) authentication.getPrincipal();
 		uacUserService.handlerLoginData(token, principal, request);
 
@@ -84,7 +80,6 @@ public class PcAuthenticationSuccessHandler extends SavedRequestAwareAuthenticat
 
 		response.setContentType("application/json;charset=UTF-8");
 		response.getWriter().write((objectMapper.writeValueAsString(WrapMapper.ok(token))));
-
 	}
 
 }

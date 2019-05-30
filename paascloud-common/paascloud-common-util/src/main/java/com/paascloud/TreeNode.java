@@ -13,6 +13,7 @@ package com.paascloud;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ import java.util.List;
  * @author paascloud.net@gmail.com
  */
 @Data
-public class TreeNode {
+public class TreeNode implements Serializable {
 	/**
 	 * 节点编码
 	 */

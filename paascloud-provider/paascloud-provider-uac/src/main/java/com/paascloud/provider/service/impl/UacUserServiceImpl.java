@@ -805,7 +805,6 @@ public class UacUserServiceImpl extends BaseService<UacUser> implements UacUserS
 
 	@Override
 	public void handlerLoginData(OAuth2AccessToken token, final SecurityUser principal, HttpServletRequest request) {
-
 		final UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
 		//获取客户端操作系统
 		final String os = userAgent.getOperatingSystem().getName();

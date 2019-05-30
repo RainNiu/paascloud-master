@@ -48,12 +48,9 @@ public class PaasCloudUacApplication {
 
 	@Bean
 	public SpringLiquibase springLiquibase(DataSource dataSource) {
-
 		SpringLiquibase springLiquibase = new SpringLiquibase();
-
 		springLiquibase.setDataSource(dataSource);
 		springLiquibase.setChangeLog("classpath:/liquibase/index.xml");
-
 		return springLiquibase;
 	}
 

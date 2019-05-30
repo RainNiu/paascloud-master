@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2018. paascloud.net All Rights Reserved.
- * 项目名称：paascloud快速搭建企业级分布式微服务平台
- * 类名称：RedisConfiguration.java
- * 创建人：刘兆明
- * 联系方式：paascloud.net@gmail.com
- * 开源地址: https://github.com/paascloud
- * 博客地址: http://blog.paascloud.net
- * 项目官网: http://paascloud.net
- */
-
 package com.paascloud.core.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -38,6 +27,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfiguration extends CachingConfigurerSupport {
 
 	@Bean
+	@Override
 	public KeyGenerator keyGenerator() {
 		return (target, method, params) -> {
 			StringBuilder sb = new StringBuilder();
@@ -48,13 +38,11 @@ public class RedisConfiguration extends CachingConfigurerSupport {
 			}
 			return sb.toString();
 		};
-
 	}
 
 	@Bean
 	public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
-		RedisCacheConfiguration redisCacheConfiguration=RedisCacheConfiguration.defaultCacheConfig();
-//				.entryTtl(null);
+		RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
 		return RedisCacheManager.builder(RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory))
 				.cacheDefaults(redisCacheConfiguration).build();
 	}
@@ -81,15 +69,15 @@ public class RedisConfiguration extends CachingConfigurerSupport {
 	public RedisTemplate createRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
 		RedisTemplate<Object,Object> redisTemplate = new RedisTemplate<>();
 		redisTemplate.setConnectionFactory(redisConnectionFactory);
-		//使用Jackson2JsonRedisSerializer替换默认的序列化规则
+		// 使用Jackson2JsonRedisSerializer替换默认的序列化规则
 		Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
 		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.setVisibility(PropertyAccessor.ALL,JsonAutoDetect.Visibility.ANY);
+		objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 		objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 		jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
-		//设置value的序列化规则
+		// 设置value的序列化规则
 		redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
-		//设置key的序列化规则
+		// 设置key的序列化规则
 		redisTemplate.setKeySerializer(new StringRedisSerializer());
 		redisTemplate.afterPropertiesSet();
 		return redisTemplate;

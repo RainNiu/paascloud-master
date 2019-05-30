@@ -22,11 +22,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.net.InetAddress;
 
-/**
- * The class Redis init runner.
- *
- * @author paascloud.net @gmail.com
- */
 @Component
 @Order
 @Slf4j
